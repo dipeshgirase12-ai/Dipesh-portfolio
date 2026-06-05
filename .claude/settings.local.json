@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:komodo.ai)",
+      "Bash(curl -s -L -o \"c:/Users/dipes/OneDrive/Desktop/my projects/DevDipesh Portfolio/portfolio/assets/certificates/product-management.jpeg\" \"https://i.imgur.com/8EzzFMu.jpeg\")",
+      "Bash(curl -s -L -o \"c:/Users/dipes/OneDrive/Desktop/my projects/DevDipesh Portfolio/portfolio/assets/certificates/prompt-engineering.jpeg\" \"https://i.imgur.com/ik0X1oK.jpeg\")",
+      "Bash(curl -s -L -o \"c:/Users/dipes/OneDrive/Desktop/my projects/DevDipesh Portfolio/portfolio/assets/certificates/ai-for-all.jpeg\" \"https://i.imgur.com/xm8bbHr.jpeg\")",
+      "Bash(curl -s -L -o \"c:/Users/dipes/OneDrive/Desktop/my projects/DevDipesh Portfolio/portfolio/assets/certificates/foundational-skills.jpeg\" \"https://i.imgur.com/oujyZBe.jpeg\")",
+      "Bash(node -c script.js)",
+      "Bash(git add portfolio/)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

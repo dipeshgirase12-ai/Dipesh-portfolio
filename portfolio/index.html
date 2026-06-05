@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DevDipesh | Cyber Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- GRID BACKGROUND -->
+  <div class="grid-bg"></div>
+
+  <!-- SCANLINE OVERLAY -->
+  <div class="scanlines"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">&lt;DevDipesh/&gt;</div>
+
+    <div class="nav-links">
+      <nav>
+        <a href="#home">HOME</a>
+        <a href="#system">SYSTEM</a>
+        <a href="#skills">MODULES</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#achievements">ACHIEVEMENTS</a>
+        <a href="#resume">RESUME</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <button class="profile-btn" id="profileBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        PROFILE
+      </button>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">ONLINE</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="themeIcon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-content">
+      <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="HI, I'M DIPESH">HI, I'M DIPESH</h1>
+      </div>
+      <p class="hero-subtitle">CSE Student // Systems Architect // AI Engineer</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value" data-target="4">0</span>
+          <span class="stat-label">PROJECTS</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-target="100">0</span>
+          <span class="stat-label">% DEDICATION</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-target="100">0</span>
+          <span class="stat-label">% CODE</span>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <button class="cyber-btn primary">VIEW_WORK.exe</button>
+        <button class="cyber-btn secondary">INITIATE_CONTACT</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SYSTEM STATUS -->
+  <section id="system" class="section">
+
+    <h2 class="section-title"><span class="bracket">[</span>SYSTEM_STATUS<span class="bracket">]</span></h2>
+
+    <div class="system-grid">
+
+      <div class="system-card">
+        <div class="system-header">
+          <span class="system-icon">◉</span>
+          <span class="system-label">STATUS</span>
+        </div>
+        <div class="system-value">ACTIVE</div>
+        <div class="system-bar">
+          <div class="system-fill" data-progress="100"></div>
+        </div>
+      </div>
+
+      <div class="system-card">
+        <div class="system-header">
+          <span class="system-icon">⚙</span>
+          <span class="system-label">PROJECTS</span>
+        </div>
+        <div class="system-value">4+ LOADED</div>
+        <div class="system-bar">
+          <div class="system-fill" data-progress="85"></div>
+        </div>
+      </div>
+
+      <div class="system-card">
+        <div class="system-header">
+          <span class="system-icon">🚀</span>
+          <span class="system-label">DEPLOY</span>
+        </div>
+        <div class="system-value">VERCEL</div>
+        <div class="system-bar">
+          <div class="system-fill" data-progress="90"></div>
+        </div>
+      </div>
+
+      <div class="system-card">
+        <div class="system-header">
+          <span class="system-icon">🧠</span>
+          <span class="system-label">LEARNING</span>
+        </div>
+        <div class="system-value">AI + STACK</div>
+        <div class="system-bar">
+          <div class="system-fill" data-progress="75"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS MODULES -->
+  <section id="skills" class="section">
+
+    <h2 class="section-title"><span class="bracket">[</span>CORE_MODULES<span class="bracket">]</span></h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h3>FRONTEND_ENGINE</h3>
+          <span class="skill-level">LVL 90</span>
+        </div>
+        <div class="skill-tech">HTML | CSS | JavaScript</div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-progress="90"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">Vue</span>
+          <span class="tag">TS</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h3>BACKEND_CORE</h3>
+          <span class="skill-level">LVL 75</span>
+        </div>
+        <div class="skill-tech">Node.js | APIs | Firebase</div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-progress="75"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Express</span>
+          <span class="tag">REST</span>
+          <span class="tag">GraphQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h3>AI_LAYER</h3>
+          <span class="skill-level">LVL 60</span>
+        </div>
+        <div class="skill-tech">AI Basics | Prompt Engineering</div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-progress="60"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">ML</span>
+          <span class="tag">NLP</span>
+          <span class="tag">API</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+
+    <h2 class="section-title"><span class="bracket">[</span>DEPLOYED_PROJECTS<span class="bracket">]</span></h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card" data-status="live">
+        <div class="project-preview">
+          <canvas class="project-canvas" data-effect="neural"></canvas>
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <span class="status-badge live-badge">
+                <span class="status-dot"></span>LIVE
+              </span>
+              <h3>Weather Genius AI</h3>
+              <p>Real-time weather forecasting web app with clean UI and API integration.</p>
+              <div class="project-buttons">
+                <a href="https://weather-genius-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/dipeshgirase12-ai/WeatherGenius-AI" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-shine"></div>
+        </div>
+        <div class="project-info">
+          <h3>Weather Genius AI</h3>
+          <p>Status: <span class="live">LIVE</span></p>
+          <div class="project-tags">
+            <span class="tag">AI</span>
+            <span class="tag">API</span>
+            <span class="tag">React</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-status="live">
+        <div class="project-preview">
+          <canvas class="project-canvas" data-effect="bars"></canvas>
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <span class="status-badge live-badge">
+                <span class="status-dot"></span>LIVE
+              </span>
+              <h3>Bio Generator</h3>
+              <p>AI-powered tool that generates professional bios instantly.</p>
+              <div class="project-buttons">
+                <a href="https://bio-generator-3zppew9p2-dipeshgirase12-ais-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/dipeshgirase12-ai/bio-generator" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7 3.37 0 0 0 9 18.13V22"></path></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-shine"></div>
+        </div>
+        <div class="project-info">
+          <h3>Bio Generator</h3>
+          <p>Status: <span class="live">LIVE</span></p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-status="dev">
+        <div class="project-preview">
+          <canvas class="project-canvas" data-effect="hex"></canvas>
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <span class="status-badge dev-badge">
+                <span class="status-dot"></span>IN DEV
+              </span>
+              <h3>NeuroCalc Pro</h3>
+              <p>Smart calculator web app with clean UI and advanced logic.</p>
+              <div class="project-buttons">
+                <a href="https://neuro-calc-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/dipeshgirase12-ai/NeuroCalc-Pro" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-shine"></div>
+        </div>
+        <div class="project-info">
+          <h3>NeuroCalc Pro</h3>
+          <p>Status: <span class="dev">DEV</span></p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section">
+
+    <h2 class="section-title"><span class="bracket">[</span>ACHIEVEMENTS<span class="bracket">]</span></h2>
+
+    <div class="achievements-tabs">
+      <button class="tab-btn active" data-tab="skills">Skills</button>
+      <button class="tab-btn" data-tab="certifications">Certifications</button>
+    </div>
+
+    <!-- Skills Tab -->
+    <div class="tab-content active" id="skills-tab">
+      <div class="skills-grid-achievements">
+        <div class="skill-item">
+          <div class="skill-icon-html"></div>
+          <h4>HTML5</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="95"></div></div>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-css"></div>
+          <h4>CSS3</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="90"></div></div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-js"></div>
+          <h4>JavaScript</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-git"></div>
+          <h4>Git & GitHub</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-responsive"></div>
+          <h4>Responsive Design</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="88"></div></div>
+          <span class="skill-percent">88%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-api"></div>
+          <h4>API Integration</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="75"></div></div>
+          <span class="skill-percent">75%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-ui"></div>
+          <h4>UI/UX Design</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="70"></div></div>
+          <span class="skill-percent">70%</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon-ai"></div>
+          <h4>AI Tools</h4>
+          <div class="skill-progress"><div class="skill-progress-fill" data-progress="65"></div></div>
+          <span class="skill-percent">65%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Tab -->
+    <div class="tab-content" id="certifications-tab">
+      <!-- Certification Summary Stats -->
+      <div class="cert-stats-bar">
+        <div class="cert-stat-card">
+          <div class="cert-stat-icon">🏆</div>
+          <div class="cert-stat-info">
+            <span class="cert-stat-value" data-target="5">5+</span>
+            <span class="cert-stat-label">Total Certifications</span>
+          </div>
+        </div>
+        <div class="cert-stat-card">
+          <div class="cert-stat-icon">🤖</div>
+          <div class="cert-stat-info">
+            <span class="cert-stat-value" data-target="3">3+</span>
+            <span class="cert-stat-label">AI Certifications</span>
+          </div>
+        </div>
+        <div class="cert-stat-card">
+          <div class="cert-stat-icon">📈</div>
+          <div class="cert-stat-info">
+            <span class="cert-stat-value" data-target="1">1+</span>
+            <span class="cert-stat-label">Product & Business</span>
+          </div>
+        </div>
+        <div class="cert-stat-card">
+          <div class="cert-stat-icon">💼</div>
+          <div class="cert-stat-info">
+            <span class="cert-stat-value" data-target="1">1+</span>
+            <span class="cert-stat-label">Professional Workshops</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search and Filter Bar -->
+      <div class="cert-controls">
+        <div class="cert-search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="certSearchInput" placeholder="Search certifications...">
+        </div>
+        <div class="cert-filter-group">
+          <button class="cert-filter-btn active" data-filter="all">All</button>
+          <button class="cert-filter-btn" data-filter="ai">AI</button>
+          <button class="cert-filter-btn" data-filter="product">Product Management</button>
+          <button class="cert-filter-btn" data-filter="workshop">Workshop</button>
+          <button class="cert-filter-btn" data-filter="professional">Professional Development</button>
+        </div>
+        <div class="cert-sort-box">
+          <label>Sort by:</label>
+          <select id="certSortSelect">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Premium Certification Cards Grid -->
+      <div class="premium-certs-grid" id="premiumCertsGrid">
+        <!-- Prompt Engineering Certification -->
+        <div class="premium-cert-card" data-category="ai" data-date="2026-03" data-cert="prompt-engineering">
+          <div class="premium-cert-image">
+            <img src="assets/certificates/prompt-engineering.jpeg" alt="Prompt Engineering Certification" loading="lazy" width="400" height="160" onerror="this.style.display='none'">
+            <div class="premium-cert-overlay">
+              <span class="premium-cert-view-text">Click to Preview</span>
+            </div>
+          </div>
+          <div class="premium-cert-content">
+            <div class="premium-cert-header">
+              <span class="premium-cert-org">LaunchEd Global</span>
+              <span class="cert-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Verified
+              </span>
+            </div>
+            <h3 class="premium-cert-title">Prompt Engineering Certification</h3>
+            <div class="premium-cert-meta">
+              <span class="premium-cert-issuer">LaunchEd Global</span>
+              <span class="premium-cert-date">March 2026</span>
+            </div>
+            <a href="assets/certificates/prompt-engineering.jpeg" target="_blank" rel="noopener noreferrer" class="premium-cert-btn primary view-cert-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Management Certification -->
+        <div class="premium-cert-card" data-category="product" data-date="2026-03" data-cert="product-management">
+          <div class="premium-cert-image">
+            <img src="assets/certificates/product-management.jpeg" alt="Product Management Certification" loading="lazy" width="400" height="160" onerror="this.style.display='none'">
+            <div class="premium-cert-overlay">
+              <span class="premium-cert-view-text">Click to Preview</span>
+            </div>
+          </div>
+          <div class="premium-cert-content">
+            <div class="premium-cert-header">
+              <span class="premium-cert-org">LaunchEd Global</span>
+              <span class="cert-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Verified
+              </span>
+            </div>
+            <h3 class="premium-cert-title">Product Management Certification</h3>
+            <div class="premium-cert-meta">
+              <span class="premium-cert-issuer">LaunchEd Global</span>
+              <span class="premium-cert-date">March 2026</span>
+            </div>
+            <a href="assets/certificates/product-management.jpeg" target="_blank" rel="noopener noreferrer" class="premium-cert-btn primary view-cert-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- AI for All -->
+        <div class="premium-cert-card" data-category="ai" data-date="2025-06" data-cert="ai-for-all">
+          <div class="premium-cert-image">
+            <img src="assets/certificates/ai-for-all.jpeg" alt="AI for All Certificate" loading="lazy" width="400" height="160" onerror="this.style.display='none'">
+            <div class="premium-cert-overlay">
+              <span class="premium-cert-view-text">Click to Preview</span>
+            </div>
+          </div>
+          <div class="premium-cert-content">
+            <div class="premium-cert-header">
+              <span class="premium-cert-org">Intel / Skill India</span>
+              <span class="cert-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Verified
+              </span>
+            </div>
+            <h3 class="premium-cert-title">AI for All</h3>
+            <div class="premium-cert-meta">
+              <span class="premium-cert-issuer">Intel / Skill India</span>
+              <span class="premium-cert-date">June 2025</span>
+            </div>
+            <a href="assets/certificates/ai-for-all.jpeg" target="_blank" rel="noopener noreferrer" class="premium-cert-btn primary view-cert-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- AI Tools Workshop -->
+        <div class="premium-cert-card" data-category="workshop" data-date="2025-08" data-cert="ai-tools-workshop">
+          <div class="premium-cert-image">
+            <img src="assets/certificates/ai-tools-workshop.jpeg" alt="AI Tools Workshop Certificate" loading="lazy" width="400" height="160" onerror="this.style.display='none'">
+            <div class="premium-cert-overlay">
+              <span class="premium-cert-view-text">Click to Preview</span>
+            </div>
+          </div>
+          <div class="premium-cert-content">
+            <div class="premium-cert-header">
+              <span class="premium-cert-org">ULSA</span>
+              <span class="cert-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Verified
+              </span>
+            </div>
+            <h3 class="premium-cert-title">AI Tools Workshop</h3>
+            <div class="premium-cert-meta">
+              <span class="premium-cert-issuer">ULSA</span>
+              <span class="premium-cert-date">August 2025</span>
+            </div>
+            <a href="assets/certificates/ai-tools-workshop.jpeg" target="_blank" rel="noopener noreferrer" class="premium-cert-btn primary view-cert-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Foundational Skills Program – Retail -->
+        <div class="premium-cert-card" data-category="professional" data-date="2025-06" data-cert="foundational-retail">
+          <div class="premium-cert-image">
+            <img src="assets/certificates/foundational-skills.jpeg" alt="Foundational Skills Program Certificate" loading="lazy" width="400" height="160" onerror="this.style.display='none'">
+            <div class="premium-cert-overlay">
+              <span class="premium-cert-view-text">Click to Preview</span>
+            </div>
+          </div>
+          <div class="premium-cert-content">
+            <div class="premium-cert-header">
+              <span class="premium-cert-org">Intel / Skill India</span>
+              <span class="cert-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Verified
+              </span>
+            </div>
+            <h3 class="premium-cert-title">Foundational Skills Program – Retail</h3>
+            <div class="premium-cert-meta">
+              <span class="premium-cert-issuer">Intel / Skill India</span>
+              <span class="premium-cert-date">June 2025</span>
+            </div>
+            <a href="assets/certificates/foundational-skills.jpeg" target="_blank" rel="noopener noreferrer" class="premium-cert-btn primary view-cert-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              View Certificate
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results Message -->
+      <div class="cert-no-results" id="certNoResults" style="display: none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <h3>No certifications found</h3>
+        <p>Try adjusting your search or filter criteria</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="section">
+
+    <h2 class="section-title"><span class="bracket">[</span>MY_RESUME<span class="bracket">]</span></h2>
+
+    <div class="doc-modal-content">
+      <!-- Resume Card -->
+      <div class="doc-card">
+        <div class="doc-card-icon resume-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        </div>
+        <h3>Resume</h3>
+        <p>My professional resume with skills, projects, and experience</p>
+        <div class="doc-card-buttons">
+          <a href="assets/resume.pdf/Dipesh_Girase_Resume.pdf" target="_blank" class="doc-btn primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            View Resume
+          </a>
+          <a href="assets/resume.pdf/Dipesh_Girase_Resume.pdf" download="Dipesh_Girase_Resume.pdf" class="doc-btn secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- CV Card -->
+      <div class="doc-card">
+        <div class="doc-card-icon cv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><circle cx="12" cy="15" r="2"></circle><path d="M12 7v2h3"></path></svg>
+        </div>
+        <h3>Curriculum Vitae</h3>
+        <p>Detailed CV with education, achievements, and certifications</p>
+        <div class="doc-card-buttons">
+          <a href="assets/cv.pdf" target="_blank" class="doc-btn primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            View CV
+          </a>
+          <a href="assets/cv.pdf" download="Dipesh_Girase_CV.pdf" class="doc-btn secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+
+    <h2 class="section-title"><span class="bracket">[</span>INITIATE_CONTACT<span class="bracket">]</span></h2>
+
+    <div class="contact-container">
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="contactName">Full Name</label>
+          <input type="text" id="contactName" placeholder="Enter your full name..." required>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email Address</label>
+          <input type="email" id="contactEmail" placeholder="Enter your email address..." required>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" placeholder="Tell me about your project, opportunity, or collaboration..." required></textarea>
+        </div>
+        <div class="form-buttons">
+          <button type="submit" class="cyber-btn primary send-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+            Send Message
+          </button>
+          <a href="https://wa.me/917218090993" target="_blank" rel="noopener noreferrer" class="cyber-btn secondary whatsapp-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </form>
+      <div class="contact-status" id="contactStatus"></div>
+    </div>
+
+  </section>
+
+  <!-- TERMINAL -->
+  <section class="terminal-section">
+
+    <h2 class="section-title"><span class="bracket">[</span>TERMINAL_INTERFACE<span class="bracket">]</span></h2>
+
+    <div id="terminal">
+      <div id="output"></div>
+
+      <div class="input-line">
+        <span class="prompt">dev@portfolio:~$</span>
+        <input id="commandInput" type="text" autofocus />
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/rajput_dipesh_46?igsh=MW5va3Y3ZTV6MTdrYg==" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.linkedin.com/in/dipesh-girase-4598b52b2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/dipeshgirase12-ai" target="_blank" rel="noopener noreferrer" class="social-btn github">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://vercel.com/dipeshgirase12-ais-projects" target="_blank" rel="noopener noreferrer" class="social-btn vercel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 19 22 19 12 2"></polygon></svg>
+        <span>Vercel</span>
+      </a>
+    </div>
+    <p class="footer-credit">BUILT_WITH_♢_BY_DEVdipesh // 2026</p>
+  </footer>
+
+  <!-- PROFILE SIDEBAR OVERLAY -->
+  <div class="profile-overlay" id="profileOverlay"></div>
+
+  <!-- PROFILE SIDEBAR -->
+  <div class="profile-sidebar" id="profileSidebar">
+    <button class="sidebar-close" id="sidebarClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+
+    <div class="profile-header">
+      <div class="profile-image-wrapper">
+        <img src="assets/images/profile.jpg" alt="Dipesh Girase" class="profile-image" loading="lazy" width="150" height="150">
+      </div>
+      <h2 class="profile-name">Dipesh Girase</h2>
+      <p class="profile-role">Computer Science Engineering Student</p>
+    </div>
+
+    <div class="profile-content">
+      <div class="profile-section">
+        <h3 class="section-label">CONTACT</h3>
+        <div class="info-card">
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>dipesh.girase12@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>(+91) 7218090993</span>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Surat, Gujarat, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <h3 class="section-label">EDUCATION</h3>
+        <div class="info-card">
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            <span>SVKM's College of Engineering, Shirpur</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <h3 class="section-label">SOCIAL</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/rajput_dipesh_46" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dipesh-girase-4598b52b2" target="_blank" rel="noopener noreferrer" class="social-link linkedin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/dipeshgirase12-ai" target="_blank" rel="noopener noreferrer" class="social-link github">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE MODAL -->
+  <div class="cert-modal-overlay" id="certModalOverlay">
+    <div class="cert-modal" id="certModal">
+      <button class="cert-modal-close" id="certModalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="cert-modal-content">
+        <div class="cert-modal-image">
+          <img src="" alt="Certificate" id="certModalImage">
+          <div class="cert-modal-image-overlay">
+            <span>Certificate Preview</span>
+          </div>
+        </div>
+        <div class="cert-modal-details">
+          <div class="cert-modal-header">
+            <span class="cert-modal-category" id="certModalCategory"></span>
+            <div class="cert-modal-verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Verified
+            </div>
+          </div>
+          <h2 class="cert-modal-title" id="certModalTitle"></h2>
+          <p class="cert-modal-issuer" id="certModalIssuer"></p>
+          <p class="cert-modal-date" id="certModalDate"></p>
+          <p class="cert-modal-description" id="certModalDescription"></p>
+          <div class="cert-modal-skills" id="certModalSkills"></div>
+          <div class="cert-modal-actions">
+            <button class="cert-modal-btn primary" id="certModalViewBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              View Full Certificate
+            </button>
+            <button class="cert-modal-btn secondary" id="certModalCredentialBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              View Credential Link
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING AI CHATBOT -->
+  <div class="floating-chat">
+    <button class="chat-toggle" id="chatToggle">
+      <span class="chat-icon">◎</span>
+    </button>
+    <div class="chat-popup" id="chatPopup">
+      <div class="chat-header">
+        <span>AI Assistant</span>
+        <button class="chat-close" id="chatClose">×</button>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask me anything..." />
+        <button id="chatSend">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

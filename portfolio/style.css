@@ -1559,6 +1559,20 @@ body.light-mode .profile-btn svg {
   stroke: #fff;
 }
 
+.social-link.netlify {
+  border-color: rgba(0, 199, 183, 0.2);
+}
+
+.social-link.netlify:hover {
+  background: rgba(0, 199, 183, 0.15);
+  border-color: rgba(0, 199, 183, 0.4);
+  box-shadow: 0 0 20px rgba(0, 199, 183, 0.2);
+}
+
+.social-link.netlify:hover svg {
+  stroke: #00C7B7;
+}
+
 @media (max-width: 480px) {
   .profile-sidebar {
     width: 100%;
@@ -1663,20 +1677,20 @@ body.light-mode .profile-btn svg {
   stroke: #fff;
 }
 
-.social-btn.vercel {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+.social-btn.netlify {
+  background: rgba(0, 199, 183, 0.1);
+  border-color: rgba(0, 199, 183, 0.3);
 }
 
-.social-btn.vercel:hover {
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #fff;
+.social-btn.netlify:hover {
+  background: rgba(0, 199, 183, 0.2);
+  box-shadow: 0 0 20px rgba(0, 199, 183, 0.3);
+  border-color: rgba(0, 199, 183, 0.5);
+  color: #00C7B7;
 }
 
-.social-btn.vercel:hover svg {
-  stroke: #fff;
+.social-btn.netlify:hover svg {
+  stroke: #00C7B7;
 }
 
 .footer-credit {

@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://your-netlify-url.netlify.app" target="_blank">
+  <a href="https://6a23a75bba8dd5def1b2e605--chimerical-dango-83650b.netlify.app" target="_blank">
     <img src="https://img.shields.io/badge/LIVE_DEMO-00f5ff?style=for-the-badge&logo=netlify&logoColor=black&labelColor=1a1a2e" alt="Live Demo" />
   </a>
   <a href="https://github.com/dipeshgirase12-ai/Dipesh-portfolio" target="_blank">

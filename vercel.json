@@ -1,0 +1,12 @@
+{
+  "buildCommand": null,
+  "outputDirectory": "portfolio",
+  "devCommand": null,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

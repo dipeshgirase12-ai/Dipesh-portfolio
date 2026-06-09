@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://dipesh-portfolio.vercel.app" target="_blank">
+  <a href="https://dipesh-portfolio-git-main-dipeshgirase12-ais-projects.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/LIVE_DEMO-00f5ff?style=for-the-badge&logo=vercel&logoColor=black&labelColor=1a1a2e" alt="Live Demo" />
   </a>
   <a href="https://github.com/dipeshgirase12-ai/Dipesh-portfolio" target="_blank">
@@ -71,11 +71,11 @@ A **cyber-themed portfolio** website showcasing projects, skills, certifications
 
 ```
 📦 DevDipesh Portfolio
+├── 📄 vercel.json             # Vercel deployment config
 ├── 📄 portfolio/
 │   ├── 📄 index.html          # Main entry point
 │   ├── 📄 script.js           # All JavaScript logic
 │   ├── 📄 style.css           # Full stylesheet
-│   ├── 📄 vercel.json         # Vercel deployment config
 │   ├── 📄 package.json        # Build script for Vercel
 │   ├── 📁 assets/             # Static assets
 │   │   ├── 📁 certificates/   # Certificate images
@@ -115,7 +115,7 @@ The site uses a **static HTML/CSS/JS** setup with the following config:
 - **Build Command:** Disabled (no build step needed)
 - **Output Directory:** `portfolio/` (served directly)
 
-A `vercel.json` file inside the `portfolio/` folder handles SPA routing so React Router-style navigation works without 404 errors.
+A root `vercel.json` file configures the `portfolio/` folder as the output directory, disables the build step (static site), and adds SPA rewrites so navigation works without 404 errors.
 
 ---
 

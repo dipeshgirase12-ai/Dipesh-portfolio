@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <a href="https://chimerical-dango-83650b.netlify.app" target="_blank">
-    <img src="https://img.shields.io/badge/LIVE_DEMO-00f5ff?style=for-the-badge&logo=netlify&logoColor=black&labelColor=1a1a2e" alt="Live Demo" />
+  <a href="https://dipesh-portfolio.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/LIVE_DEMO-00f5ff?style=for-the-badge&logo=vercel&logoColor=black&labelColor=1a1a2e" alt="Live Demo" />
   </a>
   <a href="https://github.com/dipeshgirase12-ai/Dipesh-portfolio" target="_blank">
     <img src="https://img.shields.io/badge/SOURCE_CODE-ff00ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="Source Code" />
@@ -20,7 +20,7 @@
 
 <br />
 
-<!-- GIF PREVIEW -->
+<!-- DIVIDER -->
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="100%" height="8" />
   <br /><br />
@@ -54,7 +54,7 @@ A **cyber-themed portfolio** website showcasing projects, skills, certifications
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 </p>
 
 <p align="center">
@@ -71,34 +71,33 @@ A **cyber-themed portfolio** website showcasing projects, skills, certifications
 
 ```
 📦 DevDipesh Portfolio
-├── 📄 index.html          # Main entry point
-├── 📄 script.js           # All JavaScript logic
-├── 📄 style.css           # Full stylesheet
-├── 📁 assets/             # Static assets
-│   ├── 📁 certificates/   # Certificate images
-│   ├── 📁 images/         # Profile & other images
-│   ├── 📄 cv.pdf          # Curriculum Vitae
-│   └── 📄 resume.pdf/     # Resume files
-├── 📁 components/         # Reusable HTML components
-├── 📄 netlify.toml        # Netlify deployment config
-├── 📄 README.md           # You are here
-└── 📄 LICENSE             # MIT License
+├── 📄 portfolio/
+│   ├── 📄 index.html          # Main entry point
+│   ├── 📄 script.js           # All JavaScript logic
+│   ├── 📄 style.css           # Full stylesheet
+│   ├── 📄 vercel.json         # Vercel deployment config
+│   ├── 📄 package.json        # Build script for Vercel
+│   ├── 📁 assets/             # Static assets
+│   │   ├── 📁 certificates/   # Certificate images
+│   │   ├── 📁 images/         # Profile & other images
+│   │   ├── 📄 cv.pdf          # Curriculum Vitae
+│   │   └── 📄 resume.pdf/     # Resume files
+│   └── 📁 components/         # Reusable HTML components
+├── 📄 package.json            # Root package.json (Vercel fallback)
+├── 📄 README.md               # You are here
+└── 📄 LICENSE                 # MIT License
 ```
 
 ---
 
 ## 🚀 Deployment
 
-<p align="center">
-  <img src="https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status" alt="Netlify Status" />
-</p>
-
-This site is deployed on **Netlify** with continuous deployment from the `main` branch.
+This site is deployed on **Vercel** with continuous deployment from the `main` branch.
 
 | Step | Action |
 |------|--------|
 | 1 | Push code to `main` branch |
-| 2 | Netlify auto-detects changes |
+| 2 | Vercel auto-detects changes |
 | 3 | Site rebuilds and deploys automatically |
 
 ```bash
@@ -106,6 +105,17 @@ git add .
 git commit -m "Update portfolio"
 git push origin main
 ```
+
+### Vercel Configuration
+
+The site uses a **static HTML/CSS/JS** setup with the following config:
+
+- **Root Directory:** `portfolio/` (where the source files live)
+- **Framework:** Other / None
+- **Build Command:** Disabled (no build step needed)
+- **Output Directory:** `portfolio/` (served directly)
+
+A `vercel.json` file inside the `portfolio/` folder handles SPA routing so React Router-style navigation works without 404 errors.
 
 ---
 

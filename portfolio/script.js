@@ -787,6 +787,26 @@ const certificateData = {
     skills: ['AI Tools', 'Automation', 'Productivity', 'Digital Workflows'],
     image: 'assets/certificates/ai-tools-workshop.jpeg',
     credentialLink: '#'
+  },
+  'deloitte-technology': {
+    title: 'Deloitte Australia - Technology Job Simulation',
+    issuer: 'Deloitte / Forage',
+    date: 'June 2026',
+    category: 'Professional Development',
+    description: 'Completed Deloitte Australia Technology Job Simulation through Forage, gaining hands-on experience in technology consulting, client communication, and problem-solving in a professional services environment.',
+    skills: ['Technology Consulting', 'Client Communication', 'Problem Solving', 'Professional Services'],
+    image: 'assets/certificates/deloitte-technology-job-simulation.jpg',
+    credentialLink: '#'
+  },
+  'ey-techathon-6.0': {
+    title: 'Certificate of Participation in Round 1: Executive Summary Submission of EY Techathon 6.0',
+    issuer: 'EY',
+    date: 'June 2026',
+    category: 'Workshop',
+    description: 'Participated in Round 1 of EY Techathon 6.0, submitting an executive summary for a technology-driven business challenge, demonstrating innovation and strategic thinking.',
+    skills: ['Innovation', 'Strategic Thinking', 'Business Analysis', 'Presentation'],
+    image: 'assets/certificates/ey-techathon-6.0.jpg',
+    credentialLink: '#'
   }
 };
 

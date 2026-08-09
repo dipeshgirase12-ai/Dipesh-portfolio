@@ -1,4 +1,4 @@
-// ==========================================
+ // ==========================================
 // 2026 REDESIGN - BENTO GRID & INTERACTIONS
 // Added on top of existing script.js.
 // Safe: every enhancement degrades gracefully.
@@ -243,6 +243,54 @@
         }
       }, { passive: true });
     }, 800);
+  })();
+
+  // ----------------------------------------------------------
+  // 7. "ASK MY PORTFOLIO" — AI CHAT API INTEGRATION
+  //    Tries the Vercel serverless function /api/ask.
+  //    Falls back to the local rule-based bot if the API is
+  //    not deployed / fails, so the widget never breaks.
+  //    Flip AI_CHAT_ENABLED to true once /api/ask.js is live.
+  // ----------------------------------------------------------
+  const AI_CHAT_ENABLED = false;
+
+  (function initAIAsk() {
+    const sendBtn = document.getElementById('chatSend');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    if (!sendBtn || !chatInput || !chatMessages) return;
+
+    if (!AI_CHAT_ENABLED) return;
+
+    // When a new bot message appears and AI is enabled,
+    // try to replace the last answer with a real AI response.
+    const observer = new MutationObserver(() => {
+      const botMsgs = chatMessages.querySelectorAll('.message.bot');
+      if (botMsgs.length === 0) return;
+      const lastBot = botMsgs[botMsgs.length - 1];
+      if (lastBot.dataset.aiAttempted) return;
+      lastBot.dataset.aiAttempted = '1';
+
+      const userMsgs = chatMessages.querySelectorAll('.message.user');
+      const lastUser = userMsgs[userMsgs.length - 1];
+      if (!lastUser) return;
+
+      fetch('/api/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: lastUser.textContent })
+      })
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(data => {
+          if (data && data.answer) {
+            lastBot.textContent = data.answer;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        })
+        .catch(() => { /* local fallback already answered */ });
+    });
+
+    observer.observe(chatMessages, { childList: true });
   })();
 
 })();

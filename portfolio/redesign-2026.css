@@ -426,6 +426,11 @@ body.light-mode .bento-github .github-stat {
   min-height: 480px;
 }
 
+.bento-project-card.wide {
+  grid-column: span 12;
+  min-height: 340px;
+}
+
 .bento-project-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 24px 70px rgba(0, 245, 255, 0.15), 0 0 0 1px rgba(0, 245, 255, 0.2) inset;
@@ -453,4 +458,237 @@ body.light-mode .bento-github .github-stat {
 
 .bento-project-card .project-tags {
   margin-top: 12px;
+}
+
+/* ==========================================
+   3. SCROLL TRIGGERED REVEAL ANIMATIONS
+   Gated behind .js-enabled so content is
+   never hidden if JavaScript fails to load.
+   ========================================== */
+.js-enabled [data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.js-enabled [data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-enabled [data-reveal="left"] {
+  transform: translateX(-40px);
+}
+
+.js-enabled [data-reveal="left"].revealed {
+  transform: translateX(0);
+}
+
+.js-enabled [data-reveal="right"] {
+  transform: translateX(40px);
+}
+
+.js-enabled [data-reveal="right"].revealed {
+  transform: translateX(0);
+}
+
+.js-enabled [data-reveal="scale"] {
+  transform: scale(0.92);
+}
+
+.js-enabled [data-reveal="scale"].revealed {
+  transform: scale(1);
+}
+
+/* Stagger helper */
+.js-enabled [data-reveal][data-delay="1"] { transition-delay: 0.1s; }
+.js-enabled [data-reveal][data-delay="2"] { transition-delay: 0.2s; }
+.js-enabled [data-reveal][data-delay="3"] { transition-delay: 0.3s; }
+.js-enabled [data-reveal][data-delay="4"] { transition-delay: 0.4s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==========================================
+   4. ENHANCED CHAT - RECRUITER MODE
+   ========================================== */
+.chat-quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(0, 245, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.chat-quick-chip {
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 25px;
+  background: rgba(0, 245, 255, 0.06);
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.chat-quick-chip:hover {
+  background: rgba(0, 245, 255, 0.15);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.chat-typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+}
+
+.chat-typing-indicator span {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  animation: typingBounce 1.2s infinite;
+}
+
+.chat-typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.chat-typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ==========================================
+   5. BENTO HERO RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+  .bento-hero-main {
+    grid-column: span 12;
+  }
+
+  .bento-status,
+  .bento-github,
+  .bento-location {
+    grid-column: span 6;
+  }
+
+  .bento-skills {
+    grid-column: span 12;
+  }
+
+  .bento-project-card,
+  .bento-project-card.featured,
+  .bento-project-card.wide {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-hero {
+    padding: 100px 16px 40px;
+  }
+
+  .bento-grid {
+    grid-auto-rows: minmax(100px, auto);
+    gap: 14px;
+  }
+
+  .bento-hero-main {
+    grid-column: span 12;
+    grid-row: auto;
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .bento-hero-main h1 {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .bento-role {
+    font-size: 13px;
+  }
+
+  .bento-status,
+  .bento-github,
+  .bento-skills,
+  .bento-location {
+    grid-column: span 12;
+  }
+
+  .bento-skills .skill-grid-mini {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-project-card,
+  .bento-project-card.featured,
+  .bento-project-card.wide {
+    grid-column: span 12;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-skills .skill-grid-mini {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-hero-main .bento-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .bento-hero-main .bento-actions .cyber-btn {
+    width: 100%;
+  }
+
+  .bento-github .github-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide legacy hero content when bento is active */
+.bento-active .hero-content {
+  display: none;
+}
+
+/* Ensure the old hero section-height works with bento */
+section.hero.bento-hero {
+  display: block;
+}
+
+/* Bento grid only renders when activated on the hero (one-line revert) */
+.hero .bento-grid {
+  display: none;
+}
+
+.bento-active .bento-grid {
+  display: grid;
+}
+
+/* GitHub header link */
+.bento-github .github-header a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }

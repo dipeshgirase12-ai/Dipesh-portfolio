@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <!-- 2026 Redesign: Bento grid system -->
+  <link rel="stylesheet" href="redesign-2026.css">
 </head>
 
 <body>
@@ -57,38 +59,110 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
+  <!-- HERO - 2026 Bento Grid -->
+  <section id="home" class="hero bento-hero bento-active">
 
     <canvas id="heroCanvas"></canvas>
 
-    <div class="hero-content">
-      <div class="glitch-wrapper">
-        <h1 class="glitch" data-text="HI, I'M DIPESH">HI, I'M DIPESH</h1>
-      </div>
-      <p class="hero-subtitle">
-        <span class="subtitle-line">AI Engineer</span>
-        <span class="subtitle-line">Full Stack Developer</span>
-        <span class="subtitle-line">Cyber Security Enthusiast</span>
-      </p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-value" data-target="4">0</span>
-          <span class="stat-label">PROJECTS</span>
+    <div class="bento-grid">
+
+      <!-- Large identity tile -->
+      <div class="bento-item bento-hero-main" data-reveal="left">
+        <span class="bento-overline">Available for opportunities</span>
+        <h1>DIPESH<br><span class="accent-text">GIRASE</span></h1>
+        <div class="bento-role">
+          <span class="role-chip">AI Engineer</span>
+          <span class="role-chip">Full Stack Developer</span>
+          <span class="role-chip">Cyber Security Enthusiast</span>
         </div>
-        <div class="stat">
-          <span class="stat-value" data-target="100">0</span>
-          <span class="stat-label">% DEDICATION</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value" data-target="100">0</span>
-          <span class="stat-label">% CODE</span>
+        <div class="bento-actions">
+          <button class="cyber-btn primary" id="bentoViewWork">VIEW_WORK.exe</button>
+          <button class="cyber-btn secondary" id="bentoContact">INITIATE_CONTACT</button>
         </div>
       </div>
-      <div class="hero-buttons">
-        <button class="cyber-btn primary">VIEW_WORK.exe</button>
-        <button class="cyber-btn secondary">INITIATE_CONTACT</button>
+
+      <!-- Status / availability tile -->
+      <div class="bento-item bento-status" data-reveal="up" data-delay="1">
+        <div class="status-big">
+          <span class="status-dot"></span>
+          <h3>OPEN TO WORK</h3>
+        </div>
+        <p>Computer Science Engineering student building scalable web systems & AI-powered apps. Currently located in India.</p>
       </div>
+
+      <!-- GitHub stats tile -->
+      <div class="bento-item bento-github" data-reveal="right" data-delay="2">
+        <div class="github-header">
+          <span>GITHUB_STATS</span>
+          <div class="github-avatar">DG</div>
+        </div>
+        <div class="github-stats">
+          <div class="github-stat">
+            <div class="num" id="ghRepos">4+</div>
+            <div class="label">PUBLIC REPOS</div>
+          </div>
+          <div class="github-stat">
+            <div class="num" id="ghCommits">100+</div>
+            <div class="label">COMMITS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick skills tile -->
+      <div class="bento-item bento-skills" data-reveal="up" data-delay="3">
+        <h4>CORE_STACK</h4>
+        <div class="skill-grid-mini">
+          <div class="skill-mini">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="skill-name">HTML/CSS/JS</span>
+            <span class="skill-level-mini">90%</span>
+          </div>
+          <div class="skill-mini">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path></svg>
+            <span class="skill-name">React / Vue</span>
+            <span class="skill-level-mini">80%</span>
+          </div>
+          <div class="skill-mini">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"></path></svg>
+            <span class="skill-name">Node / APIs</span>
+            <span class="skill-level-mini">75%</span>
+          </div>
+          <div class="skill-mini">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="8" r="5"></circle><path d="M12 13v8M7 16l5 5 5-5"></path></svg>
+            <span class="skill-name">AI / Prompt Eng</span>
+            <span class="skill-level-mini">65%</span>
+          </div>
+          <div class="skill-mini">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span class="skill-name">Git / GitHub</span>
+            <span class="skill-level-mini">85%</span>
+          </div>
+          <div class="skill-mini">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+            <span class="skill-name">UI/UX Design</span>
+            <span class="skill-level-mini">70%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location / education tile -->
+      <div class="bento-item bento-location" data-reveal="right" data-delay="4">
+        <div class="loc-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div>
+            <div class="loc-label">Location</div>
+            <div class="loc-value">Surat, Gujarat, India</div>
+          </div>
+        </div>
+        <div class="loc-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <div>
+            <div class="loc-label">Education</div>
+            <div class="loc-value">SVKM's College of Engg.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </section>
@@ -207,14 +281,14 @@
 
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS - 2026 Bento Grid -->
   <section id="projects" class="section">
 
     <h2 class="section-title"><span class="bracket">[</span>DEPLOYED_PROJECTS<span class="bracket">]</span></h2>
 
-    <div class="projects-grid">
+    <div class="projects-grid bento-projects">
 
-      <div class="project-card" data-status="live">
+      <div class="project-card bento-project-card featured" data-status="live" data-reveal="up">
         <div class="project-preview">
           <canvas class="project-canvas" data-effect="neural"></canvas>
           <div class="project-overlay">
@@ -249,7 +323,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-status="live">
+      <div class="project-card bento-project-card" data-status="live" data-reveal="up" data-delay="2">
         <div class="project-preview">
           <canvas class="project-canvas" data-effect="bars"></canvas>
           <div class="project-overlay">
@@ -284,7 +358,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-status="dev">
+      <div class="project-card bento-project-card" data-status="dev" data-reveal="up" data-delay="4">
         <div class="project-preview">
           <canvas class="project-canvas" data-effect="hex"></canvas>
           <div class="project-overlay">
@@ -930,10 +1004,17 @@
         <input type="text" id="chatInput" placeholder="Ask me anything..." />
         <button id="chatSend">Send</button>
       </div>
+      <div class="chat-quick-questions">
+        <button class="chat-quick-chip">What are his strongest skills?</button>
+        <button class="chat-quick-chip">Show me his best project</button>
+        <button class="chat-quick-chip">How to contact him?</button>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <!-- 2026 Redesign: Bento grid interactions -->
+  <script src="redesign-2026.js"></script>
 
   <script>
     // Ensure the homepage always starts at the Home section.

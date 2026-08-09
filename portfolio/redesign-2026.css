@@ -666,6 +666,15 @@ body.light-mode .bento-github .github-stat {
   }
 }
 
+/* Light mode: bento project card info panel */
+body.light-mode .bento-project-card .project-info {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 248, 0.98));
+}
+
+body.light-mode .bento-project-card .project-info h3 {
+  color: var(--text-dark);
+}
+
 /* Hide legacy hero content when bento is active */
 .bento-active .hero-content {
   display: none;

@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="style.css">
   <!-- 2026 Redesign: Bento grid system -->
   <link rel="stylesheet" href="redesign-2026.css">
+  <!-- Premium 2026 UI/UX Redesign -->
+  <link rel="stylesheet" href="premium-2026.css">
 </head>
 
 <body>
@@ -27,152 +29,64 @@
   <div class="cursor-follower"></div>
 
   <!-- NAV -->
-  <header class="navbar">
-    <div class="logo">&lt;DevDipesh/&gt;</div>
+  <header class="navbar" id="navbar">
+    <div class="wrap">
+      <a href="#home" class="brand">alex<span class="accent">.</span>chen<span class="accent">/</span>dev</a>
 
-    <div class="nav-links">
-      <nav>
-        <a href="#home">HOME</a>
-        <a href="#system">SYSTEM</a>
-        <a href="#skills">MODULES</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#achievements">ACHIEVEMENTS</a>
-        <a href="#resume">RESUME</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle light and dark theme">◐</button>
+        <a href="assets/resume.pdf/Dipesh_Girase_Resume.pdf" class="btn btn-primary" id="resumeDesktop" target="_blank">Resume</a>
+        <button class="menu-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
     </div>
 
-    <div class="nav-right">
-      <button class="profile-btn" id="profileBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        PROFILE
-      </button>
-      <div class="nav-status">
-        <span class="status-dot"></span>
-        <span class="status-text">ONLINE</span>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="themeIcon">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
+    <!-- Mobile Menu -->
+    <div class="mobile-panel" id="mobilePanel">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <!-- HERO - 2026 Bento Grid -->
-  <section id="home" class="hero bento-hero bento-active">
-
-    <canvas id="heroCanvas"></canvas>
-
-    <div class="bento-grid">
-
-      <!-- Large identity tile -->
-      <div class="bento-item bento-hero-main" data-reveal="left">
-        <span class="bento-overline">Available for opportunities</span>
-        <h1>DIPESH<br><span class="accent-text">GIRASE</span></h1>
-        <div class="bento-role">
-          <span class="role-chip">AI Engineer</span>
-          <span class="role-chip">Full Stack Developer</span>
-          <span class="role-chip">Cyber Security Enthusiast</span>
-        </div>
-        <div class="bento-actions">
-          <button class="cyber-btn primary" id="bentoViewWork">VIEW_WORK.exe</button>
-          <button class="cyber-btn secondary" id="bentoContact">INITIATE_CONTACT</button>
-        </div>
-      </div>
-
-      <!-- Status / availability tile -->
-      <div class="bento-item bento-status" data-reveal="up" data-delay="1">
-        <div class="status-big">
-          <span class="status-dot"></span>
-          <h3>OPEN TO WORK</h3>
-        </div>
-        <p>Computer Science Engineering student building scalable web systems & AI-powered apps. Currently located in India.</p>
-      </div>
-
-      <!-- GitHub stats tile -->
-      <div class="bento-item bento-github" data-reveal="right" data-delay="2">
-        <div class="github-header">
-          <span>GITHUB_STATS // LIVE</span>
-          <div class="github-avatar">DG</div>
-        </div>
-        <div class="github-stats">
-          <div class="github-stat">
-            <div class="num" id="ghRepos">--</div>
-            <div class="label">PUBLIC REPOS</div>
-          </div>
-          <div class="github-stat">
-            <div class="num" id="ghStars">--</div>
-            <div class="label">STARS</div>
-          </div>
-          <div class="github-stat">
-            <div class="num" id="ghFollowers">--</div>
-            <div class="label">FOLLOWERS</div>
-          </div>
-          <div class="github-stat">
-            <div class="num" id="ghFollowing">--</div>
-            <div class="label">FOLLOWING</div>
-          </div>
+  <!-- HERO - Premium 2026 -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hero-kicker">
+          <span class="dot"></span>
+          Open to opportunities
+        </p>
+        <h1>
+          Building digital products<br>
+          with <span class="accent">AI</span> and modern tech.
+        </h1>
+        <p class="lede">
+          I'm Dipesh Girase — a Computer Science Engineering student specializing in
+          AI-powered full-stack development. I build scalable, production-ready applications
+          using modern frontend, backend, and AI technologies.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="assets/resume.pdf/Dipesh_Girase_Resume.pdf" class="btn" target="_blank">Download Resume</a>
         </div>
       </div>
 
-      <!-- Quick skills tile -->
-      <div class="bento-item bento-skills" data-reveal="up" data-delay="3">
-        <h4>CORE_STACK</h4>
-        <div class="skill-grid-mini">
-          <div class="skill-mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            <span class="skill-name">HTML/CSS/JS</span>
-            <span class="skill-level-mini">90%</span>
-          </div>
-          <div class="skill-mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path></svg>
-            <span class="skill-name">React / Vue</span>
-            <span class="skill-level-mini">80%</span>
-          </div>
-          <div class="skill-mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"></path></svg>
-            <span class="skill-name">Node / APIs</span>
-            <span class="skill-level-mini">75%</span>
-          </div>
-          <div class="skill-mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="8" r="5"></circle><path d="M12 13v8M7 16l5 5 5-5"></path></svg>
-            <span class="skill-name">AI / Prompt Eng</span>
-            <span class="skill-level-mini">65%</span>
-          </div>
-          <div class="skill-mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            <span class="skill-name">Git / GitHub</span>
-            <span class="skill-level-mini">85%</span>
-          </div>
-          <div class="skill-mini">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
-            <span class="skill-name">UI/UX Design</span>
-            <span class="skill-level-mini">70%</span>
-          </div>
-        </div>
+      <div class="hero-visual">
+        <div class="tech-float">React</div>
+        <div class="tech-float">Node.js</div>
+        <div class="tech-float">Python</div>
+        <div class="tech-float">AI</div>
+        <div class="tech-float">MongoDB</div>
       </div>
-
-      <!-- Location / education tile -->
-      <div class="bento-item bento-location" data-reveal="right" data-delay="4">
-        <div class="loc-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <div>
-            <div class="loc-label">Location</div>
-            <div class="loc-value">Surat, Gujarat, India</div>
-          </div>
-        </div>
-        <div class="loc-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-          <div>
-            <div class="loc-label">Education</div>
-            <div class="loc-value">SVKM's College of Engg.</div>
-          </div>
-        </div>
-      </div>
-
     </div>
-
   </section>
 
   <!-- SYSTEM STATUS -->
@@ -230,58 +144,62 @@
 
   </section>
 
-  <!-- SKILLS MODULES -->
+  <!-- SKILLS -->
   <section id="skills" class="section">
 
-    <h2 class="section-title"><span class="bracket">[</span>CORE_MODULES<span class="bracket">]</span></h2>
+    <h2 class="section-title">Skills & Technologies</h2>
 
     <div class="skills-grid">
 
-      <div class="skill-card">
+      <div class="skill-card reveal">
         <div class="skill-header">
-          <h3>FRONTEND_ENGINE</h3>
-          <span class="skill-level">LVL 90</span>
+          <h3>Frontend</h3>
         </div>
-        <div class="skill-tech">HTML | CSS | JavaScript</div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-progress="90"></div>
-        </div>
+        <div class="skill-tech">HTML, CSS, JavaScript, React, Vue, TypeScript</div>
         <div class="skill-tags">
           <span class="tag">React</span>
           <span class="tag">Vue</span>
-          <span class="tag">TS</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Tailwind</span>
         </div>
       </div>
 
-      <div class="skill-card">
+      <div class="skill-card reveal reveal-delay-1">
         <div class="skill-header">
-          <h3>BACKEND_CORE</h3>
-          <span class="skill-level">LVL 75</span>
+          <h3>Backend</h3>
         </div>
-        <div class="skill-tech">Node.js | APIs | Firebase</div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-progress="75"></div>
-        </div>
+        <div class="skill-tech">Node.js, Express, Firebase, REST APIs, GraphQL</div>
         <div class="skill-tags">
+          <span class="tag">Node.js</span>
           <span class="tag">Express</span>
-          <span class="tag">REST</span>
-          <span class="tag">GraphQL</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">MongoDB</span>
         </div>
       </div>
 
-      <div class="skill-card">
+      <div class="skill-card reveal reveal-delay-2">
         <div class="skill-header">
-          <h3>AI_LAYER</h3>
-          <span class="skill-level">LVL 60</span>
+          <h3>AI & Machine Learning</h3>
         </div>
-        <div class="skill-tech">AI Basics | Prompt Engineering</div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-progress="60"></div>
-        </div>
+        <div class="skill-tech">AI Basics, Prompt Engineering, LLM Integration</div>
         <div class="skill-tags">
-          <span class="tag">ML</span>
-          <span class="tag">NLP</span>
-          <span class="tag">API</span>
+          <span class="tag">AI</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">OpenAI</span>
+          <span class="tag">Anthropic</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-header">
+          <h3>Tools & Deployment</h3>
+        </div>
+        <div class="skill-tech">Git, GitHub, Vercel, Netlify, Docker, VS Code</div>
+        <div class="skill-tags">
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Docker</span>
         </div>
       </div>
 
@@ -289,14 +207,14 @@
 
   </section>
 
-  <!-- PROJECTS - 2026 Bento Grid -->
+  <!-- PROJECTS -->
   <section id="projects" class="section">
 
-    <h2 class="section-title"><span class="bracket">[</span>DEPLOYED_PROJECTS<span class="bracket">]</span></h2>
+    <h2 class="section-title">Featured Work</h2>
 
-    <div class="projects-grid bento-projects">
+    <div class="projects-grid">
 
-      <div class="project-card bento-project-card featured" data-status="live" data-reveal="up">
+      <article class="project-card reveal">
         <div class="project-preview">
           <canvas class="project-canvas" data-effect="neural"></canvas>
           <div class="project-overlay">
@@ -329,9 +247,9 @@
             <span class="tag">React</span>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card bento-project-card" data-status="live" data-reveal="up" data-delay="2">
+      <article class="project-card reveal reveal-delay-1">
         <div class="project-preview">
           <canvas class="project-canvas" data-effect="bars"></canvas>
           <div class="project-overlay">
@@ -364,9 +282,9 @@
             <span class="tag">JS</span>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card bento-project-card" data-status="dev" data-reveal="up" data-delay="4">
+      <article class="project-card reveal reveal-delay-2">
         <div class="project-preview">
           <canvas class="project-canvas" data-effect="hex"></canvas>
           <div class="project-overlay">
@@ -399,7 +317,7 @@
             <span class="tag">CSS</span>
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
 
@@ -815,7 +733,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section">
 
-    <h2 class="section-title"><span class="bracket">[</span>INITIATE_CONTACT<span class="bracket">]</span></h2>
+    <h2 class="section-title">Let's build something useful.</h2>
 
     <div class="contact-container">
       <form class="contact-form" id="contactForm">
@@ -831,16 +749,7 @@
           <label for="contactMessage">Message</label>
           <textarea id="contactMessage" placeholder="Tell me about your project, opportunity, or collaboration..." required></textarea>
         </div>
-        <div class="form-buttons">
-          <button type="submit" class="cyber-btn primary send-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
-            Send Message
-          </button>
-          <a href="https://wa.me/917218090993" target="_blank" rel="noopener noreferrer" class="cyber-btn secondary whatsapp-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-            Chat on WhatsApp
-          </a>
-        </div>
+        <button type="submit" class="btn btn-primary send-btn">Send Message</button>
       </form>
       <div class="contact-status" id="contactStatus"></div>
     </div>
@@ -865,25 +774,20 @@
   </section>
 
   <footer class="footer">
-    <div class="footer-social">
-      <a href="https://www.instagram.com/rajput_dipesh_46?igsh=MW5va3Y3ZTV6MTdrYg==" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        <span>Instagram</span>
-      </a>
-      <a href="https://www.linkedin.com/in/dipesh-girase-4598b52b2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        <span>LinkedIn</span>
-      </a>
-      <a href="https://github.com/dipeshgirase12-ai" target="_blank" rel="noopener noreferrer" class="social-btn github">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        <span>GitHub</span>
-      </a>
-      <a href="https://app.netlify.com/teams/dipeshgirase12-ai/projects" target="_blank" rel="noopener noreferrer" class="social-btn netlify">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 12 12 22 2 12 12 2"/></polygon></svg>
-        <span>Netlify</span>
-      </a>
+    <div class="wrap">
+      <div class="footer-social">
+        <a href="https://github.com/dipeshgirase12-ai" target="_blank" rel="noopener noreferrer" class="social-btn">
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/dipesh-girase-4598b52b2" target="_blank" rel="noopener noreferrer" class="social-btn">
+          <span>LinkedIn</span>
+        </a>
+        <a href="mailto:dipesh.girase12@gmail.com" class="social-btn">
+          <span>Email</span>
+        </a>
+      </div>
+      <p class="footer-credit">Dipesh Girase — Software Engineer • AI Engineer • Full-Stack Developer</p>
     </div>
-    <p class="footer-credit">BUILT_WITH_♢_BY_DEVdipesh // 2026</p>
   </footer>
 
   <!-- PROFILE SIDEBAR OVERLAY -->
@@ -1023,6 +927,8 @@
   <script src="script.js"></script>
   <!-- 2026 Redesign: Bento grid interactions -->
   <script src="redesign-2026.js"></script>
+  <!-- Premium 2026 UI/UX Redesign -->
+  <script src="premium-2026.js"></script>
 
   <script>
     // Ensure the homepage always starts at the Home section.

@@ -202,6 +202,7 @@
       { img: base + 'ai-tools-workshop.jpeg', view: base + 'ai-tools-workshop.jpeg', title: 'AI Tools Workshop', issuer: 'ULSA', date: 'August 2025', sort: '2025-08', category: 'Workshop & Events' },
       { img: base + 'foundational-skills.jpeg', view: base + 'foundational-skills.jpeg', title: 'Foundational Skills Program – Retail', issuer: 'Intel / Skill India', date: 'June 2025', sort: '2025-06', category: 'Professional Development' },
       { img: base + 'deloitte-technology-job-simulation.jpg', view: base + 'deloitte-technology-job-simulation.pdf', title: 'Deloitte Australia – Technology Job Simulation', issuer: 'Deloitte / Forage', date: 'June 2026', sort: '2026-06', category: 'Professional Development' },
+      { img: base + 'machine-learning.jpg', view: base + 'machine-learning.pdf', title: 'Foundations for Machine Learning', issuer: 'Dartmouth College / Coursera', date: 'October 2, 2026', sort: '2026-10', category: 'AI' },
       { img: base + 'ey-techathon-6.0.jpg', view: base + 'ey-techathon-6.0.pdf', title: 'EY Techathon 6.0 – Round 1 Participation', issuer: 'EY', date: 'June 2026', sort: '2026-06', category: 'Workshop & Events' }
     ];
 
@@ -352,21 +353,142 @@
   // ----------------------------------------------------------
   (function initAIAssistant() {
     const fab = document.getElementById('fabToggle');
+    const dock = document.getElementById('assistantDock');
     const panel = document.getElementById('assistantPanel');
     const close = document.getElementById('fabClose');
     const bodyEl = document.getElementById('assistBody');
     const input = document.getElementById('assistInput');
     const send = document.getElementById('assistSend');
-    if (!fab || !panel || !bodyEl || !input || !send) return;
+    if (!fab || !dock || !panel || !bodyEl || !input || !send) return;
 
-    function toggle() { panel.classList.toggle('open'); }
-    fab.addEventListener('click', toggle);
-    close.addEventListener('click', toggle);
+    const edgeGap = 12;
+    let ignoreFabClick = false;
+
+    function positionPanel() {
+      const rect = dock.getBoundingClientRect();
+      const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      const viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+      const panelWidth = panel.offsetWidth || Math.min(320, viewportWidth - edgeGap * 2);
+      const panelHeight = panel.offsetHeight || 344;
+      const maxPanelLeft = Math.max(edgeGap, viewportWidth - panelWidth - edgeGap);
+      const maxPanelTop = Math.max(edgeGap, viewportHeight - panelHeight - edgeGap);
+      const preferredLeft = rect.right - panelWidth;
+      const preferredTop = rect.top - panelHeight - edgeGap;
+      const belowTop = rect.bottom + edgeGap;
+      const panelLeft = Math.min(Math.max(edgeGap, preferredLeft), maxPanelLeft);
+      const panelTop = preferredTop >= edgeGap
+        ? preferredTop
+        : Math.min(Math.max(edgeGap, belowTop), maxPanelTop);
+
+      // Use an explicit position relative to the dock. That keeps the whole
+      // panel visible even when the launcher is dragged through the centre.
+      panel.classList.remove('anchor-left', 'anchor-bottom');
+      panel.style.left = Math.round(panelLeft - rect.left) + 'px';
+      panel.style.top = Math.round(panelTop - rect.top) + 'px';
+      panel.style.right = 'auto';
+      panel.style.bottom = 'auto';
+    }
+
+    function toggle() {
+      const willOpen = !panel.classList.contains('open');
+      if (willOpen) positionPanel();
+      panel.classList.toggle('open');
+      fab.setAttribute('aria-expanded', String(willOpen));
+    }
+
+    fab.addEventListener('click', (e) => {
+      if (!ignoreFabClick) toggle();
+      e.preventDefault();
+    });
+    close.addEventListener('click', () => {
+      panel.classList.remove('open');
+      fab.setAttribute('aria-expanded', 'false');
+    });
+
+    // The launcher and the chat header are drag handles. The dock is clamped
+    // to the visible viewport so it stays reachable on both desktop and mobile.
+    let drag = null;
+    const savedPositionKey = 'dipesh-assistant-position';
+
+    function savePosition() {
+      try {
+        localStorage.setItem(savedPositionKey, JSON.stringify({
+          left: parseFloat(dock.style.left), top: parseFloat(dock.style.top)
+        }));
+      } catch (_) { /* Storage can be unavailable in private browsing. */ }
+    }
+
+    function placeDock(left, top) {
+      const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      const viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+      const maxLeft = Math.max(edgeGap, viewportWidth - dock.offsetWidth - edgeGap);
+      const maxTop = Math.max(edgeGap, viewportHeight - dock.offsetHeight - edgeGap);
+      dock.style.left = Math.round(Math.min(Math.max(edgeGap, left), maxLeft)) + 'px';
+      dock.style.top = Math.round(Math.min(Math.max(edgeGap, top), maxTop)) + 'px';
+      dock.style.right = 'auto';
+      dock.style.bottom = 'auto';
+      if (panel.classList.contains('open')) positionPanel();
+    }
+
+    function restorePosition() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(savedPositionKey));
+        if (Number.isFinite(saved?.left) && Number.isFinite(saved?.top)) {
+          placeDock(saved.left, saved.top);
+        }
+      } catch (_) { /* Keep the default bottom-right position. */ }
+    }
+
+    function beginDrag(e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      if (e.target.closest('#fabClose, input, button:not(#fabToggle)')) return;
+      const rect = dock.getBoundingClientRect();
+      drag = { pointerId: e.pointerId, startX: e.clientX, startY: e.clientY, left: rect.left, top: rect.top, moved: false };
+      dock.classList.add('is-dragging');
+      e.currentTarget.setPointerCapture?.(e.pointerId);
+    }
+
+    function moveDrag(e) {
+      if (!drag || e.pointerId !== drag.pointerId) return;
+      const deltaX = e.clientX - drag.startX;
+      const deltaY = e.clientY - drag.startY;
+      if (Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4) drag.moved = true;
+      if (drag.moved) {
+        e.preventDefault();
+        placeDock(drag.left + deltaX, drag.top + deltaY);
+      }
+    }
+
+    function endDrag(e) {
+      if (!drag || e.pointerId !== drag.pointerId) return;
+      const moved = drag.moved;
+      drag = null;
+      dock.classList.remove('is-dragging');
+      if (moved) {
+        savePosition();
+        ignoreFabClick = true;
+        window.setTimeout(() => { ignoreFabClick = false; }, 0);
+      }
+    }
+
+    fab.addEventListener('pointerdown', beginDrag);
+    panel.querySelector('[data-drag-handle]')?.addEventListener('pointerdown', beginDrag);
+    window.addEventListener('pointermove', moveDrag, { passive: false });
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+    window.addEventListener('resize', () => {
+      if (dock.style.left || dock.style.top) {
+        const rect = dock.getBoundingClientRect();
+        placeDock(rect.left, rect.top);
+      }
+      if (panel.classList.contains('open')) positionPanel();
+    });
+    restorePosition();
 
     // Local knowledge-base fallback (works offline / pre-deploy)
     function localReply(text) {
       const t = text.toLowerCase();
-      if (t.includes('project')) return "Dipesh has shipped Weather Genius AI and Bio Generator (both live), plus NeuroCalc Pro (in dev). Scroll to the PROJECTS section for demos and code.";
+      if (t.includes('project')) return "Dipesh has shipped Salary Manager Pro, Weather Genius AI, and Bio Generator (all live), plus NeuroCalc Pro (in development). Scroll to the PROJECTS section for demos and code.";
       if (t.includes('skill') || t.includes('stack')) return "Core strengths: Frontend (React/Vue/TS), Backend (Node/Express/GraphQL), and a growing AI layer (prompt engineering, ML basics). Check the MODULES section.";
       if (t.includes('resume') || t.includes('cv')) return "You'll find both the resume and full CV in the RESUME section, with view and download options.";
       if (t.includes('contact') || t.includes('hire') || t.includes('email')) return "Best way in: the contact form above, email at dipesh.girase12@gmail.com, or WhatsApp directly.";

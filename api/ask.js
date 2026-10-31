@@ -31,6 +31,8 @@ SKILLS: HTML, CSS, JavaScript, React, Vue, TypeScript, Node.js, APIs, Firebase,
 Git/GitHub, UI/UX Design, AI Basics, Prompt Engineering.
 
 PROJECTS:
+- Salary Manager Pro: Salary-management web app for organizing salary-related
+  information. Status: LIVE.
 - Weather Genius AI: Real-time weather forecasting web app with clean UI and API
   integration. Status: LIVE.
 - Bio Generator: AI-powered tool that generates professional bios instantly.
@@ -40,8 +42,9 @@ PROJECTS:
 
 CERTIFICATIONS: Full Stack Development (2026), Prompt Engineering (LaunchEd Global,
 2026), Product Management (LaunchEd Global, 2026), AI for All (Intel/Skill India,
-2025), AI Tools Workshop (ULSA, 2025), Deloitte Australia Technology Job Simulation
-(Forage, 2026), EY Techathon 6.0 participation (2026).
+2025), AI Tools Workshop (ULSA, 2025), Foundational Skills Program â€“ Retail
+(Intel/Skill India, 2025), Deloitte Australia Technology Job Simulation
+(Forage, 2026), EY Techathon 6.0 participation (2026), Foundations for Machine Learning (Dartmouth / Coursera, 2026).
 
 EXPERIENCE: Building real projects like Weather Genius AI and Bio Generator.
 Participated in EY Techathon 6.0 and Deloitte Australia Technology Job Simulation.
